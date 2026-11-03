@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f58220">
+<title>Catálogo de casuísticas | WIN</title>
+<style>
+:root{--orange:#f58220;--orange-dark:#d9690b;--ink:#242424;--muted:#707070;--line:#ececec;--soft:#fff3e8;--bg:#f6f7f8;--white:#fff;--shadow:0 12px 34px #1b24300d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.5 Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}
+button,input{font:inherit}button{cursor:pointer}.shell{max-width:1100px;margin:28px auto;padding:0 18px 34px}
+.hero{background:linear-gradient(120deg,#f58220,#ff9c43);color:#fff;border-radius:22px;padding:26px 28px;box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;background:#fff;color:var(--orange);border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:25px}
+.brand small{display:block;letter-spacing:.12em;font-size:11px;opacity:.9}.brand strong{font-size:16px}
+h1{font-size:clamp(25px,4vw,36px);line-height:1.15;margin:26px 0 8px}.hero p{margin:0;max-width:650px;color:#fff8f1}
+.stats{display:flex;gap:10px;margin-top:22px}.stat{background:#fff;color:var(--orange-dark);border-radius:12px;padding:10px 18px;min-width:110px;text-align:center}.stat b{display:block;font-size:23px;line-height:1.2}.stat span{font-size:11px;color:#666}
+.panel{background:#fff;border:1px solid var(--line);border-radius:20px;margin-top:18px;padding:24px;box-shadow:var(--shadow)}
+.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.heading h2{margin:0;font-size:21px}.heading p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.searchwrap{position:relative;margin:0 0 20px}.searchwrap span{position:absolute;left:14px;top:11px;color:#888}.search{width:100%;padding:12px 14px 12px 42px;border:1px solid #dedede;border-radius:12px;outline:none}.search:focus{border-color:var(--orange);box-shadow:0 0 0 3px #f582201c}
+.eyebrow{font-size:11px;letter-spacing:.12em;color:#888;font-weight:700;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.category,.case{border:1px solid var(--line);background:#fff;border-radius:14px;padding:17px;text-align:left;transition:.18s;min-width:0}.category:hover,.case:hover{border-color:#f7b477;transform:translateY(-2px);box-shadow:0 8px 22px #f5822012}.cat-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}.ico{width:42px;height:42px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--orange-dark);font-size:21px}.count{background:#f4f4f4;border-radius:20px;padding:3px 9px;font-size:11px;color:#666}.category strong{display:block;font-size:16px}.cat-foot{display:flex;justify-content:space-between;color:#888;font-size:12px;margin-top:9px}.arrow{color:var(--orange);font-size:18px}
+.cases{display:grid;gap:10px}.case{display:flex;align-items:center;gap:13px}.number{flex:0 0 34px;height:34px;border-radius:10px;background:var(--soft);color:var(--orange-dark);display:grid;place-items:center;font-weight:700}.case-main{flex:1;min-width:0}.case-main strong{display:block}.case-main small{display:block;color:var(--muted);margin-top:3px}.case-arrow{color:var(--orange);font-size:20px}
+.pill{display:inline-flex;align-items:center;border-radius:30px;background:var(--soft);color:var(--orange-dark);font-size:11px;font-weight:700;padding:5px 10px}
+.detail{background:#fafafa;border:1px solid var(--line);border-radius:15px;padding:22px}.detail h3{font-size:24px;margin:14px 0}.detail-label{font-size:11px;letter-spacing:.1em;color:#888;font-weight:700;margin:18px 0 6px}.description{font-size:15px}.destination{display:flex;align-items:center;gap:14px;background:var(--soft);border:1px solid #ffe0c4;border-radius:13px;padding:15px;color:#b95708}.destination b{font-size:25px;display:block;line-height:1.15}.destination small{color:#85542e}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:10px;padding:10px 15px;font-weight:650}.primary{background:var(--orange);color:#fff}.primary:hover{background:var(--orange-dark)}.secondary{background:#fff;border:1px solid #ddd;color:#444}.secondary:hover{background:#f7f7f7}.hidden{display:none!important}.empty{text-align:center;padding:34px 10px;color:#777}.footer{text-align:center;color:#999;font-size:11px;padding:18px 8px 0}
+.backlink{border:0;background:transparent;color:#666;padding:7px 0;font-weight:600}.backlink:hover{color:var(--orange-dark)}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:17px}.hero{padding:22px}.shell{margin:14px auto}.stats{gap:7px}.stat{min-width:0;flex:1;padding:9px 6px}}
+@media(max-width:430px){.grid{grid-template-columns:1fr 1fr;gap:8px}.category{padding:13px}.category strong{font-size:14px}.hero{border-radius:16px}.panel{border-radius:16px}.stats .stat b{font-size:20px}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header class="hero">
+  <div class="brand"><div class="logo">W</div><div><strong>WIN | SOPORTE TÉCNICO</strong><small>CATÁLOGO DE DERIVACIONES</small></div></div>
+  <h1>Catálogo de casuísticas a derivar</h1>
+  <p>Encuentra la casuística, identifica el motivo y conoce el área responsable de su atención.</p>
+  <div class="stats"><div class="stat"><b id="categoryCount">12</b><span>Categorías</span></div><div class="stat"><b id="caseCount">35</b><span>Casuísticas</span></div><div class="stat"><b>2</b><span>Áreas destino</span></div></div>
+</header>
+<section class="panel">
+  <div class="toolbar">
+    <div class="heading"><h2 id="viewTitle">Selecciona una categoría</h2><p id="viewSubtitle">Explora los motivos disponibles</p></div>
+    <button id="homeBtn" class="btn secondary hidden">⌂ Inicio</button>
+  </div>
+  <div id="homeView">
+    <div class="searchwrap"><span>⌕</span><input id="search" class="search" type="search" placeholder="Buscar categoría o casuística..." autocomplete="off"></div>
+    <p class="eyebrow">CATEGORÍAS DISPONIBLES</p>
+    <div id="categoryGrid" class="grid"></div>
+    <div id="emptySearch" class="empty hidden">No se encontraron resultados. Prueba con otro término.</div>
+  </div>
+  <div id="categoryView" class="hidden">
+    <p class="eyebrow" id="categoryCountLabel"></p>
+    <div id="caseList" class="cases"></div>
+  </div>
+  <div id="detailView" class="hidden">
+    <div class="detail">
+      <span class="pill" id="detailCategory"></span>
+      <h3 id="detailTitle"></h3>
+      <div class="detail-label">DESCRIPCIÓN DE LA CASUÍSTICA</div>
+      <div class="description" id="detailDescription"></div>
+      <div class="detail-label">ÁREA RESPONSABLE DE LA DERIVACIÓN</div>
+      <div class="destination"><div style="font-size:25px">▣</div><div><b id="detailDestination"></b><small>Destino de derivación</small></div><div style="margin-left:auto;font-size:22px">✓</div></div>
+      <div class="actions"><button id="copyBtn" class="btn secondary">▢ Copiar información</button><button id="prevBtn" class="btn secondary">← Anterior</button><button id="nextBtn" class="btn primary">Siguiente →</button></div>
+    </div>
+    <button id="backCasesBtn" class="backlink">← Volver a las casuísticas</button>
+  </div>
+</section>
+<footer class="footer">WIN · CATÁLOGO DE CASUÍSTICAS · SOPORTE TÉCNICO<br>Herramienta de consulta interna</footer>
+</main>
+<script>
+const catalog = [
+{name:"WinTV",icon:"▣",items:[
+["Error de credenciales","Cliente no recibe credenciales de la app WINTV.","NOC"],
+["Problemas con dispositivo específico","Cliente presenta inconvenientes únicamente en un dispositivo determinado.","NOC"],
+["Pantalla negra","Cliente no visualiza contenido.","NOC"],
+["Error de programación","Inconveniente relacionado a la programación de WinTV.","NOC"],
+["Sin credenciales","Cliente no tiene credenciales WINTV creadas.","NOC"],
+["Intermitencia de canales","Se presenta contenido entrecortado en ciertos canales.","NOC"],
+["Cantidad de TV's conectadas","Cliente no puede conectar más dispositivos por límite de dispositivos conectados.","NOC"]]},
+{name:"Telefonía",icon:"☎",items:[
+["Inconvenientes en recepción de llamadas","Cliente no puede recibir llamadas en su servicio de telefonía.","OTRS"],
+["Inconvenientes en emisión de llamadas","Cliente no puede efectuar llamadas.","OTRS"],
+["Recepción de llamadas de un operador específico","Cliente no puede recibir llamadas desde un operador específico.","OTRS"],
+["Acceso App Fonowin","Cliente no puede acceder correctamente a la aplicación FONOWIN.","OTRS"],
+["Service Port / WAN interface","Cliente no cuenta con la VLAN asignada o WAN no asigna IP.","OTRS"]]},
+{name:"Pérdida",icon:"⌁",items:[
+["Pérdida cableada","Cliente sin alarmas ni paquetes perdidos no navega por cable de red.","NOC"],
+["Service Port","Cliente sin VLAN asignada o con VLAN incorrecta.","OTRS"],
+["ONT desmatriculada","Cliente cuenta con ONT desmatriculada en NCE.","OTRS"],
+["WAN interface","Cliente sin IP a pesar de tener la VLAN correcta.","OTRS"]]},
+{name:"App / Web",icon:"◎",items:[
+["Acceso","Cliente no puede acceder a una Web o App, pero sí puede con otro operador.","NOC"],
+["Lentitud","Cliente tiene lentitud en una Web o App, pero funciona con normalidad con otro operador.","NOC"],
+["Intermitencia","Cliente tiene intermitencia en una Web o App, pero funciona con normalidad con otro operador.","NOC"],
+["Ping elevado","Cliente tiene latencia elevada en una Web o App, pero funciona con normalidad con otro operador.","NOC"]]},
+{name:"SmartWiFi",icon:"◉",items:[["Matrícula","ONT no registrada en SmartWiFi.","NOC"]]},
+{name:"AVSystem",icon:"▤",items:[["Matrícula","ONT no registrada en AVSystem.","NOC"]]},
+{name:"Juegos",icon:"⌘",items:[
+["Latencia elevada","Cliente tiene latencia elevada en un servidor de un juego específico.","NOC"],
+["Sin acceso al juego","Cliente no tiene acceso a un juego específico.","NOC"],
+["Paquetes perdidos","Cliente tiene paquetes perdidos en un servidor de un juego específico.","NOC"]]},
+{name:"NAT",icon:"⇄",items:[["Tipo de NAT","Cliente solicita cambio de NAT.","NOC"]]},
+{name:"Puertos",icon:"⚙",items:[["Apertura de puertos","Cliente desea aperturar puertos específicos.","NOC"]]},
+{name:"Correo",icon:"✉",items:[
+["Recepción de correos","Cliente no puede recibir correos.","NOC"],
+["Envío de correos","Cliente no puede enviar correos.","NOC"]]},
+{name:"Ancho de banda",icon:"◴",items:[
+["Asimetría","Cliente tiene asimetría en test de velocidad.","NOC"],
+["Test de velocidad bajo","Cliente no llega a la velocidad garantizada.","NOC"],
+["Plan asignado incorrecto","Cliente no tiene asignada la velocidad correcta en NCE.","OTRS"]]},
+{name:"App Mi Win",icon:"▣",items:[
+["Cliente gamer no puede cambiar IP","Cliente gamer con intentos vigentes de cambio de IP tiene error al intentar realizarlo.","NOC"],
+["Cliente gamer no puede activar Nitro","Cliente gamer con horas restantes de Nitro tiene error al intentar activarlo.","NOC"],
+["Cliente no puede ver dispositivos (Smart WiFi)","Cliente no puede visualizar dispositivos en el App Mi Win.","NOC"]]}
+];
+let activeCategory=-1,activeCase=-1;
+const $=id=>document.getElementById(id);
+const allCases=catalog.reduce((n,c)=>n+c.items.length,0);
+$("categoryCount").textContent=catalog.length;$("caseCount").textContent=allCases;
+function show(view){["homeView","categoryView","detailView"].forEach(id=>$(id).classList.toggle("hidden",id!==view));$("homeBtn").classList.toggle("hidden",view==="homeView")}
+function home(){activeCategory=-1;activeCase=-1;$("search").value="";$("viewTitle").textContent="Selecciona una categoría";$("viewSubtitle").textContent="Explora los motivos disponibles";show("homeView");renderCategories()}
+function renderCategories(query=""){
+ const q=query.trim().toLocaleLowerCase("es");
+ const grid=$("categoryGrid");grid.innerHTML="";
+ let found=0;
+ catalog.forEach((cat,i)=>{
+  const matching=cat.items.filter(item=>item.join(" ").toLocaleLowerCase("es").includes(q));
+  const catMatch=cat.name.toLocaleLowerCase("es").includes(q);
+  if(q&&!catMatch&&!matching.length)return;found++;
+  const button=document.createElement("button");button.className="category";
+  button.innerHTML=`<div class="cat-top"><span class="ico">${cat.icon}</span><span class="count">${cat.items.length}</span></div><strong>${cat.name}</strong><div class="cat-foot"><span>Ver casuísticas</span><span class="arrow">›</span></div>`;
+  button.addEventListener("click",()=>openCategory(i,q&&!catMatch?matching.map(x=>cat.items.indexOf(x)):null));grid.appendChild(button);
+ });
+ $("emptySearch").classList.toggle("hidden",found!==0);
+}
+function openCategory(i,filtered=null){activeCategory=i;activeCase=-1;const c=catalog[i];$("viewTitle").textContent=c.name;$("viewSubtitle").textContent="Selecciona el motivo correspondiente";$("categoryCountLabel").textContent=(filtered?filtered.length:c.items.length)+" MOTIVOS DISPONIBLES";const list=$("caseList");list.innerHTML="";(filtered||c.items.map((_,j)=>j)).forEach(j=>{const item=c.items[j],b=document.createElement("button");b.className="case";b.innerHTML=`<span class="number">${j+1}</span><span class="case-main"><strong></strong><small></small></span><span class="case-arrow">›</span>`;b.querySelector("strong").textContent=item[0];b.querySelector("small").textContent=item[1];b.addEventListener("click",()=>openDetail(j));list.appendChild(b)});show("categoryView")}
+function openDetail(j){activeCase=j;const item=catalog[activeCategory].items[j];$("viewTitle").textContent="Detalle de casuística";$("viewSubtitle").textContent="Información de derivación";$("detailCategory").textContent=catalog[activeCategory].name;$("detailTitle").textContent=item[0];$("detailDescription").textContent=item[1];$("detailDestination").textContent=item[2];$("prevBtn").disabled=j===0;$("nextBtn").disabled=j===catalog[activeCategory].items.length-1;$("prevBtn").style.opacity=j===0?".45":"1";$("nextBtn").style.opacity=j===catalog[activeCategory].items.length-1?".45":"1";show("detailView")}
+$("search").addEventListener("input",e=>renderCategories(e.target.value));
+$("homeBtn").addEventListener("click",home);
+$("backCasesBtn").addEventListener("click",()=>openCategory(activeCategory));
+$("prevBtn").addEventListener("click",()=>{if(activeCase>0)openDetail(activeCase-1)});
+$("nextBtn").addEventListener("click",()=>{if(activeCase<catalog[activeCategory].items.length-1)openDetail(activeCase+1)});
+$("copyBtn").addEventListener("click",async()=>{const x=catalog[activeCategory].items[activeCase];const text=`Categoría: ${catalog[activeCategory].name}\nCasuística: ${x[0]}\nDescripción: ${x[1]}\nDerivación: ${x[2]}`;try{await navigator.clipboard.writeText(text);$("copyBtn").textContent="✓ Información copiada";setTimeout(()=>$("copyBtn").textContent="▢ Copiar información",1800)}catch{alert(text)}});
+renderCategories();
+</script>
+</body></html>
