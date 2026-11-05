@@ -34,7 +34,7 @@ h1{font-size:clamp(25px,4vw,36px);line-height:1.15;margin:26px 0 8px}.hero p{mar
   <div class="brand"><div class="logo">W</div><div><strong>WIN | SOPORTE TÉCNICO</strong><small>CATÁLOGO DE DERIVACIONES</small></div></div>
   <h1>Catálogo de casuísticas a derivar</h1>
   <p>Encuentra la casuística, identifica el motivo y conoce el área responsable de su atención.</p>
-  <div class="stats"><div class="stat"><b id="categoryCount">12</b><span>Categorías</span></div><div class="stat"><b id="caseCount">35</b><span>Casuísticas</span></div><div class="stat"><b>2</b><span>Áreas destino</span></div></div>
+  <div class="stats"><div class="stat"><b id="categoryCount">12</b><span>Categorías</span></div><div class="stat"><b id="caseCount">35</b><span>Casuísticas</span></div><div class="stat"><b>3</b><span>Áreas destino</span></div></div>
 </header>
 <section class="panel">
   <div class="toolbar">
@@ -59,7 +59,7 @@ h1{font-size:clamp(25px,4vw,36px);line-height:1.15;margin:26px 0 8px}.hero p{mar
       <div class="description" id="detailDescription"></div>
       <div class="detail-label">ÁREA RESPONSABLE DE LA DERIVACIÓN</div>
       <div class="destination"><div style="font-size:25px">▣</div><div><b id="detailDestination"></b><small>Destino de derivación</small></div><div style="margin-left:auto;font-size:22px">✓</div></div>
-      <div class="actions"><button id="copyBtn" class="btn secondary">▢ Copiar información</button><button id="prevBtn" class="btn secondary">← Anterior</button><button id="nextBtn" class="btn primary">Siguiente →</button></div>
+      <div class="actions"><button id="prevBtn" class="btn secondary">← Anterior</button><button id="nextBtn" class="btn primary">Siguiente →</button></div>
     </div>
     <button id="backCasesBtn" class="backlink">← Volver a las casuísticas</button>
   </div>
@@ -106,7 +106,7 @@ const catalog = [
 {name:"Ancho de banda",icon:"◴",items:[
 ["Asimetría","Cliente tiene asimetría en test de velocidad.","NOC"],
 ["Test de velocidad bajo","Cliente no llega a la velocidad garantizada.","NOC"],
-["Plan asignado incorrecto","Cliente no tiene asignada la velocidad correcta en NCE.","OTRS"]]},
+["Plan asignado incorrecto","Cliente no tiene asignada la velocidad correcta en NCE.","MDA"]]},
 {name:"App Mi Win",icon:"▣",items:[
 ["Cliente gamer no puede cambiar IP","Cliente gamer con intentos vigentes de cambio de IP tiene error al intentar realizarlo.","NOC"],
 ["Cliente gamer no puede activar Nitro","Cliente gamer con horas restantes de Nitro tiene error al intentar activarlo.","NOC"],
@@ -139,7 +139,7 @@ $("homeBtn").addEventListener("click",home);
 $("backCasesBtn").addEventListener("click",()=>openCategory(activeCategory));
 $("prevBtn").addEventListener("click",()=>{if(activeCase>0)openDetail(activeCase-1)});
 $("nextBtn").addEventListener("click",()=>{if(activeCase<catalog[activeCategory].items.length-1)openDetail(activeCase+1)});
-$("copyBtn").addEventListener("click",async()=>{const x=catalog[activeCategory].items[activeCase];const text=`Categoría: ${catalog[activeCategory].name}\nCasuística: ${x[0]}\nDescripción: ${x[1]}\nDerivación: ${x[2]}`;try{await navigator.clipboard.writeText(text);$("copyBtn").textContent="✓ Información copiada";setTimeout(()=>$("copyBtn").textContent="▢ Copiar información",1800)}catch{alert(text)}});
+
 renderCategories();
 </script>
 </body></html>
